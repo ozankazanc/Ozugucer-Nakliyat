@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Baglanti">
+  <DataContextMoniker Name="/BaglantiDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6c8a2182-0824-438a-97ba-bb7d4d229163" absoluteBounds="8.5, 3.25, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/BaglantiDataContext/Soforler" />
+      <nestedChildShapes>
+        <elementListCompartment Id="794bf031-4c06-4b4d-9356-7c3ad7d2ee8c" absoluteBounds="8.515, 3.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a14e9935-616e-41e7-9594-eabf46f6f3f3" absoluteBounds="6.25, 4.125, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/BaglantiDataContext/IrsaliyeTablo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4021a55a-589b-47cb-845e-ad3e2edf3bd1" absoluteBounds="6.265, 4.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.5 : 4.57294840494792); (8.25 : 4.57294840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BaglantiDataContext/Soforler/Soforler_IrsaliyeTablo" />
+      <nodes>
+        <classShapeMoniker Id="6c8a2182-0824-438a-97ba-bb7d4d229163" />
+        <classShapeMoniker Id="a14e9935-616e-41e7-9594-eabf46f6f3f3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3294479c-fb77-460d-831a-e565fd581177" absoluteBounds="3.75, 4.125, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/BaglantiDataContext/IrsaliyeDetay" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f88ad169-ae85-44c1-96db-88fdb97e5d69" absoluteBounds="3.765, 4.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.25 : 5.01044840494792); (5.75 : 5.01044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BaglantiDataContext/IrsaliyeTablo/IrsaliyeTablo_IrsaliyeDetay" />
+      <nodes>
+        <classShapeMoniker Id="a14e9935-616e-41e7-9594-eabf46f6f3f3" />
+        <classShapeMoniker Id="3294479c-fb77-460d-831a-e565fd581177" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

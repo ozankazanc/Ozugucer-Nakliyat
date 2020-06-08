@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DBOZ" Class="BaglantiDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DB\DBOZ.mdf;Integrated Security=True" SettingsObjectName="OZIRSALIYE.Properties.Settings" SettingsPropertyName="DBOZConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Soforler" Member="Soforlers">
+    <Type Name="Soforler">
+      <Column Name="SoforID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AdiSoyadi" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="HesapNo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="V_D" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Sil" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Soforler_IrsaliyeTablo" Member="IrsaliyeTablos" ThisKey="SoforID" OtherKey="SoforID" Type="IrsaliyeTablo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.IrsaliyeTablo" Member="IrsaliyeTablos">
+    <Type Name="IrsaliyeTablo">
+      <Column Name="IrsaliyeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SoforID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PlakaNo" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Tarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Sil" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="IrsaliyeTablo_IrsaliyeDetay" Member="IrsaliyeDetays" ThisKey="IrsaliyeID" OtherKey="IrsaliyeID" Type="IrsaliyeDetay" />
+      <Association Name="Soforler_IrsaliyeTablo" Member="Soforler" ThisKey="SoforID" OtherKey="SoforID" Type="Soforler" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.IrsaliyeDetay" Member="IrsaliyeDetays">
+    <Type Name="IrsaliyeDetay">
+      <Column Name="KayitID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HalNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gonderen" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Kilogram" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Adet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cinsi" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SandıkNevi" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Fiyat" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="IrsaliyeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hatirlatma" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Sil" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="IrsaliyeTablo_IrsaliyeDetay" Member="IrsaliyeTablo" ThisKey="IrsaliyeID" OtherKey="IrsaliyeID" Type="IrsaliyeTablo" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
